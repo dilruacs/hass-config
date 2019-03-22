@@ -68,16 +68,17 @@ config:
 history:
 sun:
 map:
-cloud:
-  google_actions:
-    filter:
-      include_domains:
-        - climate
-        - switch
-        - light
-      exclude_domains:
-        - group
-        - scene
+
+#cloud:
+#  google_actions:
+#    filter:
+#      include_domains:
+#        - climate
+#        - switch
+#        - light
+#      exclude_domains:
+#        - group
+#        - scene
 
 http:
   server_port: 8123
