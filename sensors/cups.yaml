@@ -1,4 +1,3 @@
-  - name: Drucker
-    platform: cups
+  - platform: cups
     printers: ML-1610
     host: cups

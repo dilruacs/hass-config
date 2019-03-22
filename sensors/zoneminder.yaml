@@ -1,2 +1,1 @@
-  - name: Schuppen
-    platform: zoneminder
+  - platform: zoneminder

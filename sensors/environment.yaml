@@ -1,10 +1,8 @@
   - platform: mqtt
     unit_of_measurement: "\u00b0C"
-    name: DHT Sensor Temperature
+    name: Temperatur
     state_topic: homeassistant/sensor/dht_sensor_temperature/state
-    friendly_name: "Temperatur"
   - platform: mqtt
     unit_of_measurement: "%"
-    name: DHT Sensor Humidity
+    name: "Luftfeuchtigkeit"
     state_topic: homeassistant/sensor/dht_sensor_humidity/state
-    friendly_name: "Luftfeuchtigkeit"
