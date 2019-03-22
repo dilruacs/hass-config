@@ -31,7 +31,7 @@ mqtt:
   port: 8883
   username: !secret ha_mqtt_username
   password: !secret ha_mqtt_password
-  certificate: /etc/mosquitto/ca_certificates/ca.crt
+  certificate: !secret ha_mqtt_cert
   client_id: hass-vm
   tls_version: '1.2'
 
