@@ -1,0 +1,1 @@
+git_update_config: git -C /home/homeassistant/.homeassistant pull

@@ -110,3 +110,4 @@ input_select: !include input/select.yaml
 input_boolean: !include input/boolean.yaml
 sabnzbd: !include usenet.yaml
 zone: !include zones.yaml
+shell_command: !include shell.yaml
