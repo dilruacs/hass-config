@@ -1,0 +1,10 @@
+  - platform: sonarr
+    api_key: !secret sonarr_api
+    host: !secret sonarr_fqdn
+    monitored_conditions:
+      - series
+      - upcoming
+      - wanted
+      - queue
+      - commands
+      - diskspace

@@ -1,0 +1,30 @@
+  - platform: mqtt
+    name: Wohnzimmer
+    current_temperature_topic: tele/fhem/fht_Wohnzimmer/measured-temp
+    temperature_command_topic: cmnd/fhem/fht_Wohnzimmer/desired-temp
+    temperature_state_topic: cmnd/fhem/fht_Wohnzimmer/desired-temp
+    retain: true
+  - platform: mqtt
+    name: Kinderzimmer
+    current_temperature_topic: tele/fhem/fht_Kinderzimmer/measured-temp
+    temperature_command_topic: cmnd/fhem/fht_Kinderzimmer/desired-temp
+    temperature_state_topic: cmnd/fhem/fht_Kinderzimmer/desired-temp
+    retain: true
+  - platform: mqtt
+    name: Schlafzimmer
+    current_temperature_topic: tele/fhem/fht_Schlafzimmer/measured-temp
+    temperature_command_topic: cmnd/fhem/fht_Schlafzimmer/desired-temp
+    temperature_state_topic: cmnd/fhem/fht_Schlafzimmer/desired-temp
+    retain: true
+  - platform: mqtt
+    name: Kueche
+    current_temperature_topic: tele/fhem/fht_Kueche/measured-temp
+    temperature_command_topic: cmnd/fhem/fht_Kueche/desired-temp
+    temperature_state_topic: cmnd/fhem/fht_Kueche/desired-temp
+    retain: true
+  - platform: mqtt
+    name: Bad
+    current_temperature_topic: tele/fhem/fht_Bad/measured-temp
+    temperature_command_topic: cmnd/fhem/fht_Bad/desired-temp
+    temperature_state_topic: cmnd/fhem/fht_Bad/desired-temp
+    retain: true

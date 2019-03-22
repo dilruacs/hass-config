@@ -1,0 +1,42 @@
+switch.ESPURNA_95570F:
+  hidden: true
+light.sonoffrgbcouch:
+  friendly_name: LED Couch
+device_tracker.alix_schuppen:
+  hidden: true
+device_tracker.nbetop:
+  hidden: true
+device_tracker.galaxys8_3:
+  friendly_name: !secret person2_firstname
+device_tracker.nexus_6:
+  friendly_name: !secret person1_firstname
+sensor.temperatur:
+  unit_of_measurement: °C
+device_tracker.pixel_c:
+  hidden: true
+device_tracker.firetv:
+  hidden: true
+binary_sensor.tuer_schuppen:
+  friendly_name: Tür Schuppen
+climate.kueche:
+  friendly_name: Küche
+switch.kuehlschrank:
+  friendly_name: Kühlschrank
+sensor.verbrauch_kuehlschrank:
+  friendly_name: Verbrauch Kühlschrank
+media_player.panasonic_viera_tv:
+  friendly_name: TV Wohnzimmer
+sensor.station1:
+  unit_of_measurement: €
+sensor.station2:
+  unit_of_measurement: €
+sensor.station3:
+  unit_of_measurement: €
+sensor.dht_sensor_humidity:
+  friendly_name: Luftfeuchtigkeit
+sensor.dht_sensor_temperature:
+  friendly_name: Temperatur
+binary_sensor.tuer_schlafzimmer:
+  friendly_name: Tür Schlafzimmer
+device_tracker.s8_dreamlte:
+  friendly_name: Galaxy-S8

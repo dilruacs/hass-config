@@ -1,0 +1,10 @@
+  tuer_schuppen:
+    name: Schuppen ist auf
+    done_message: Schuppen ist zu
+    entity_id: binary_sensor.tuer_schuppen
+    state: 'on'
+    repeat: 15
+#    skip_first: true
+    can_acknowledge: true
+    notifiers:
+      - kodi_wz

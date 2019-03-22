@@ -1,0 +1,60 @@
+# Timer fuer Licht abgelaufen:
+#   - licht aus
+- alias: Timer Licht Schuppen abgelaufen
+  initial_state: True
+  trigger:
+  - platform: event
+    event_type: timer.finished
+    event_data:
+      entity_id: timer.licht_schuppen
+  action:
+  - service: light.turn_off
+    data:
+      entity_id: light.schuppen
+
+# Bewegung im Schuppen:
+#   - licht an
+#   - kein timer
+- alias: Bewegung Schuppen
+  initial_state: True
+  trigger:
+    platform: state
+    entity_id: binary_sensor.bewegung_schuppen
+    from: 'off'
+    to: 'on'
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.schuppen
+    - service: timer.cancel
+      entity_id: timer.licht_schuppen
+
+# Bewegung im Schuppen vorbei
+#   - start timer
+- alias: Ende Bewegung Schuppen
+  initial_state: True
+  trigger:
+    platform: state
+    entity_id: binary_sensor.bewegung_schuppen
+    from: 'on'
+    to: 'off'
+  action:
+    - service: timer.start
+      entity_id: timer.licht_schuppen
+
+# Tuer Schuppen auf:
+#   - licht an
+#   - start timer
+- alias: Tuer Schuppen
+  initial_state: True
+  trigger:
+    platform: state
+    entity_id: binary_sensor.tuer_schuppen
+    from: 'off'
+    to: 'on'
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.schuppen
+    - service: timer.start
+      entity_id: timer.licht_schuppen

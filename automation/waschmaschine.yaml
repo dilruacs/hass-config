@@ -1,0 +1,195 @@
+# Set Waschmaschine selector
+- trigger:
+    platform: mqtt
+    topic: "stat/sonoff-wasch/program"
+  action:
+    service: input_select.select_option
+    data_template:
+      entity_id: input_select.washer_mode
+      option: "{{ trigger.payload }}"
+
+# Set Waschmaschine status
+- trigger:
+    platform: state
+    entity_id: input_select.washer_mode
+  action:
+    service: mqtt.publish
+    data_template:
+      topic: "stat/sonoff-wasch/program"
+      retain: true
+      payload: "{{ states('input_select.washer_mode') }}"
+
+# Wenn steckdose aus: status -> off
+- trigger:
+    platform: state
+    entity_id: switch.waschmaschine
+    to: 'off'
+  action:
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.washer_mode
+        option: "off"
+    - service: timer.cancel
+      entity_id: timer.washer_off
+
+# Wenn power < 3 && status == done: status -> off
+- trigger:
+    platform: numeric_state
+    entity_id: sensor.verbrauch_waschmaschine
+    below: 3
+  condition:
+    condition: state
+    entity_id: input_select.washer_mode
+    state: "done"
+  action:
+    service: input_select.select_option
+    data:
+      entity_id: input_select.washer_mode
+      option: "off"
+
+# Wenn power < 10 && status == finishing: status -> done
+- trigger:
+    platform: numeric_state
+    entity_id: sensor.verbrauch_waschmaschine
+    below: 10
+  condition:
+    condition: state
+    entity_id: input_select.washer_mode
+    state: "finishing"
+  action:
+    service: input_select.select_option
+    data:
+      entity_id: input_select.washer_mode
+      option: "done"
+
+# Wenn power > 50 && (status == off || status == done): status -> running
+- trigger:
+    platform: numeric_state
+    entity_id: sensor.verbrauch_waschmaschine
+    above: 50
+  condition:
+    condition: or
+    conditions:
+      - condition: state
+        entity_id: input_select.washer_mode
+        state: "off"
+      - condition: state
+        entity_id: input_select.washer_mode
+        state: "done"
+  action:
+    service: input_select.select_option
+    data:
+      entity_id: input_select.washer_mode
+      option: "running"
+
+# Wenn 350 < power < 1000 && status == running && timer == idle: start timer (120s)
+- trigger:
+    platform: numeric_state
+    entity_id: sensor.verbrauch_waschmaschine
+    below: 1000
+    above: 350
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_select.washer_mode
+        state: "running"
+      - condition: state
+        entity_id: timer.spindry_detect
+        state: "idle"
+  action:
+    service: timer.start
+    entity_id: timer.spindry_detect
+
+# Wenn (power < 250 || power > 1000) && status == running: cancel timer
+- trigger:
+    platform: numeric_state
+    entity_id: sensor.verbrauch_waschmaschine
+    below: 250
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_select.washer_mode
+        state: "running"
+      - condition: state
+        entity_id: timer.spindry_detect
+        state: "active"
+  action:
+    service: timer.cancel
+    entity_id: timer.spindry_detect
+- trigger:
+    platform: numeric_state
+    entity_id: sensor.verbrauch_waschmaschine
+    above: 1000
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_select.washer_mode
+        state: "running"
+      - condition: state
+        entity_id: timer.spindry_detect
+        state: "active"
+  action:
+    service: timer.cancel
+    entity_id: timer.spindry_detect
+
+# Wenn status == running && timer.finished: status -> finishing
+- trigger:
+    platform: event
+    event_type: timer.finished
+    event_data:
+      entity_id: timer.spindry_detect
+  action:
+    service: input_select.select_option
+    data:
+      entity_id: input_select.washer_mode
+      option: "finishing"
+
+# Wenn Waschprogramm fertig:
+#   - notification
+#   - strom aus nach 5 Minuten
+- trigger:
+    platform: state
+    entity_id: input_select.washer_mode
+    to: 'done'
+  action:
+    - service: persistent_notification.create
+      data:
+        message: "Waschprogramm ist fertig"
+        title: "Waschmaschine status"
+        notification_id: "washer_done"
+    - service: timer.start
+      entity_id: timer.washer_off
+
+# Wenn ein neues Waschprogramm anfängt:
+#   - cancel timer für Stromabschaltung
+- trigger:
+    platform: state
+    entity_id: input_select.washer_mode
+    to: 'running'
+  action:
+    - service: timer.cancel
+      entity_id: timer.washer_off
+
+# Wenn ein neues Waschprogramm anfängt oder der Waschmaschine aus geht:
+#   - dismiss notification
+- trigger:
+    platform: state
+    entity_id: input_select.washer_mode
+    from: 'done'
+  action:
+    service: persistent_notification.dismiss
+    data:
+      notification_id: "washer_done"
+
+# Waschmaschine timeout vorbei: Strom aus
+- trigger:
+    platform: event
+    event_type: timer.finished
+    event_data:
+      entity_id: timer.washer_off
+  action:
+    service: switch.turn_off
+    entity_id: switch.waschmaschine

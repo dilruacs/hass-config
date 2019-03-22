@@ -1,0 +1,112 @@
+# some general configuration first
+homeassistant:
+  name: Home
+  latitude: !secret ha_lat
+  longitude: !secret ha_long
+  elevation: !secret ha_elev
+  unit_system: metric
+  time_zone: Europe/Berlin
+  customize: !include customize.yaml
+  auth_providers:
+    - type: homeassistant
+    - type: trusted_networks
+      trusted_networks:
+        - 127.0.0.1
+        - ::1
+        - !secret trusted_range
+
+logger:
+  default: warn
+  logs:
+    aiounifi: debug
+    homeassistant.components.unifi: debug
+    homeassistant.components.switch.unifi: debug
+
+recorder:
+  db_url: !secret ha_recorder_db
+  purge_interval: 0
+
+mqtt:
+  broker: !secret mqtt_broker_fqdn
+  port: 8883
+  username: !secret ha_mqtt_username
+  password: !secret ha_mqtt_password
+  certificate: /etc/mosquitto/ca_certificates/ca.crt
+  client_id: hass-vm
+  tls_version: '1.2'
+
+zoneminder:
+  host: !secret zoneminder_fqdn
+  path_zms: /cgi-bin/nph-zms
+
+weather:
+  - platform: openweathermap
+    api_key: !secret owm_api_key
+
+ffmpeg:
+  ffmpeg_bin: /usr/bin/ffmpeg
+
+updater:
+  reporting: False
+
+tts:
+  - platform: google
+
+frontend:
+  javascript_version: latest
+
+logbook:
+  exclude:
+    domains:
+      - group
+      - scene
+
+# enabled components
+conversation:
+discovery:
+config:
+history:
+sun:
+map:
+cloud:
+  google_actions:
+    filter:
+      include_domains:
+        - climate
+        - switch
+        - light
+      exclude_domains:
+        - group
+        - scene
+
+http:
+  server_port: 8123
+  use_x_forwarded_for: true
+  trusted_proxies: 127.0.0.1
+  ip_ban_enabled: True
+  login_attempts_threshold: 3
+
+custom_updater:
+lovelace:
+  mode: yaml
+
+# everything else through includes
+sensor: !include_dir_merge_list sensors
+binary_sensor: !include binary_sensors.yaml
+group: !include groups.yaml
+automation: !include_dir_merge_list automation
+script: !include scripts.yaml
+light: !include lights.yaml
+switch: !include switches.yaml
+camera: !include cameras.yaml
+device_tracker: !include device_trackers.yaml
+climate: !include climate.yaml
+calendar: !include calendars.yaml
+media_player: !include media_players.yaml
+alert: !include alerts.yaml
+notify: !include notify.yaml
+timer: !include timers.yaml
+input_select: !include input/select.yaml
+input_boolean: !include input/boolean.yaml
+sabnzbd: !include usenet.yaml
+zone: !include zones.yaml

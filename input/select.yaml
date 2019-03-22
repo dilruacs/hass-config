@@ -1,0 +1,13 @@
+  washer_mode:
+    name: Waschmaschine Status
+    options:
+      - "off"
+      - "running"
+      - "finishing"
+      - "done"
+  dryer_mode:
+    name: Trockner Status
+    options:
+      - "off"
+      - "running"
+      - "done"

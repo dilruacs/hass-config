@@ -1,0 +1,148 @@
+- trigger:
+    platform: time
+    at: '04:15:00'
+  condition:
+    condition: state
+    entity_id: calendar.familie_top_fruhschicht
+    state: 'on'
+  action:
+    service: climate.set_temperature
+    data:
+      entity_id: climate.bad
+      temperature: 23
+
+- trigger:
+    platform: time
+    at: '05:00:00'
+  condition:
+    condition: state
+    entity_id: calendar.familie_top_fruhschicht
+    state: 'on'
+  action:
+    service: climate.set_temperature
+    data:
+      entity_id: climate.bad
+      temperature: 20
+
+- trigger:
+    platform: time
+    at: '06:00:00'
+  condition:
+    condition: state
+    entity_id: input_boolean.weekday
+    state: 'on'
+  action:
+    service: climate.set_temperature
+    data:
+      entity_id: climate.bad
+      temperature: 23
+
+- trigger:
+    platform: time
+    at: '06:30:00'
+  condition:
+    condition: state
+    entity_id: input_boolean.weekday
+    state: 'on'
+  action:
+    service: climate.set_temperature
+    data:
+      entity_id: climate.kinderzimmer
+      temperature: 20
+
+- trigger:
+    platform: time
+    at: '07:00:00'
+  condition:
+    condition: state
+    entity_id: input_boolean.weekday
+    state: 'on'
+  action:
+    service: climate.set_temperature
+    data:
+      entity_id: climate.bad
+      temperature: 20
+
+- trigger:
+    platform: time
+    at: '07:30:00'
+  condition:
+    condition: state
+    entity_id: input_boolean.weekday
+    state: 'on'
+  action:
+    service: climate.set_temperature
+    data:
+      entity_id: climate.kinderzimmer
+      temperature: 18
+
+- trigger:
+    platform: time
+    at: '07:30:00'
+  condition:
+    condition: state
+    entity_id: input_boolean.weekday
+    state: 'off'
+  action:
+    service: climate.set_temperature
+    data:
+      entity_id: climate.kinderzimmer
+      temperature: 21
+
+- trigger:
+    platform: time
+    at: '08:00:00'
+  condition:
+    condition: state
+    entity_id: input_boolean.weekday
+    state: 'off'
+  action:
+    service: climate.set_temperature
+    data:
+      entity_id: climate.wohnzimmer
+      temperature: 21
+
+- trigger:
+    platform: time
+    at: '15:00:00'
+  condition:
+    condition: state
+    entity_id: input_boolean.weekday
+    state: 'on'
+  action:
+    - service: climate.set_temperature
+      data:
+        entity_id: climate.kinderzimmer
+        temperature: 21
+    - service: climate.set_temperature
+      data:
+        entity_id: climate.wohnzimmer
+        temperature: 21
+
+- trigger:
+    platform: time
+    at: '19:30:00'
+  action:
+    service: climate.set_temperature
+    data:
+      entity_id: climate.kinderzimmer
+      temperature: 18
+
+- trigger:
+    platform: time
+    at: '23:00:00'
+  action:
+    service: climate.set_temperature
+    data:
+      entity_id: climate.wohnzimmer
+      temperature: 18
+
+- trigger:
+    platform: time
+    at: '22:30:00'
+  action:
+    service: climate.set_temperature
+    data:
+      entity_id: climate.schlafzimmer
+      temperature: 18
+

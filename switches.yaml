@@ -1,0 +1,76 @@
+  - platform: mqtt
+    name: "Waschmaschine"
+    state_topic: "stat/sonoff-wasch/POWER"
+    command_topic: "cmnd/sonoff-wasch/POWER"
+    availability_topic: "tele/sonoff-wasch/LWT"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    retain: true
+  - platform: mqtt
+    name: "Trockner"
+    state_topic: "stat/sonoff-trockner/POWER"
+    command_topic: "cmnd/sonoff-trockner/POWER"
+    availability_topic: "tele/sonoff-trockner/LWT"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    retain: true
+  - platform: mqtt
+    name: "Kuehlschrank"
+    state_topic: "stat/sonoff-kuehl/POWER"
+    command_topic: "cmnd/sonoff-kuehl/POWER"
+    availability_topic: "tele/sonoff-kuehl/LWT"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    retain: true
+  - platform: mqtt
+    name: "FreeNAS"
+    state_topic: "stat/sonoff-freenas/POWER"
+    command_topic: "cmnd/sonoff-freenas/POWER"
+    availability_topic: "tele/sonoff-freenas/LWT"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    retain: true
+  - platform: mqtt
+    name: "Kuehlschrank"
+    state_topic: "stat/sonoff-kuehl/POWER"
+    command_topic: "cmnd/sonoff-kuehl/POWER"
+    availability_topic: "tele/sonoff-kuehl/LWT"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    retain: true
+  - name: Drucker
+    platform: mqtt
+    command_topic: cmnd/fhem/wz_Drucker/POWER
+    state_topic: stat/fhem/wz_Drucker/POWER
+    payload_on: "on"
+    payload_off: "off"
+    retain: true
+  - name: TV
+    platform: mqtt
+    command_topic: cmnd/fhem/wz_TV/POWER
+    state_topic: stat/fhem/wz_TV/POWER
+    payload_on: "on"
+    payload_off: "off"
+    retain: true
+  - name: HTPC
+    platform: mqtt
+    command_topic: cmnd/fhem/wz_HTPC/POWER
+    state_topic: stat/fhem/wz_HTPC/POWER
+    payload_on: "on"
+    payload_off: "off"
+    retain: true

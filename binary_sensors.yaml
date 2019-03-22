@@ -1,0 +1,20 @@
+  - platform: mqtt
+    name: Tuer Schlafzimmer
+    state_topic: stat/tk_Schlafzimmer/state
+    payload_on: "Open"
+    payload_off: "Closed"
+  - platform: mqtt
+    name: Tuer Wohnung
+    state_topic: stat/tk_Wohnung/state
+    payload_on: "Open"
+    payload_off: "Closed"
+  - platform: mqtt
+    state_topic: rpi-schuppen/input/door
+    name: Tuer Schuppen
+    payload_on: "OPEN"
+    payload_off: "CLOSED"
+  - platform: mqtt
+    state_topic: rpi-schuppen/input/motion
+    name: Bewegung Schuppen
+    payload_on: "MOTION"
+    payload_off: "IDLE"

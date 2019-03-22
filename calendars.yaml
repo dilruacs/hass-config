@@ -1,0 +1,8 @@
+  - platform: caldav
+    username: !secret nc_username
+    password: !secret nc_password
+    url: !secret nc_url
+    custom_calendars:
+      - name: 'Frühschicht'
+        calendar: !secret nc_calname
+        search: 'Frühschicht'

@@ -1,0 +1,8 @@
+  - platform: unifi
+    host: !secret unifi_fqdn
+    username: !secret unifi_username
+    password: !secret unifi_password
+    ssid_filter:
+      - !secret unifi_ssid
+    verify_ssl: false
+  - platform: owntracks

@@ -1,0 +1,12 @@
+  - platform: mqtt
+    state_topic: "owntracks/nexus/6"
+    name: "Battery Nexus 6"
+    unit_of_measurement: "%"
+    value_template: '{{ value_json.battery }}'
+    device_class: battery
+  - platform: mqtt
+    state_topic: "owntracks/s8/dreamlte"
+    name: "Battery Galaxy S8"
+    unit_of_measurement: "%"
+    value_template: '{{ value_json.battery }}'
+    device_class: battery

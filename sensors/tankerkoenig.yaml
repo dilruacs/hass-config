@@ -1,0 +1,18 @@
+  - platform: rest
+    name: Fuel
+    scan_interval: 600
+    resource: https://creativecommons.tankerkoenig.de/json/prices.php?apikey=c316cd11-2ec4-5695-d57b-a0d94d3cc2d1&ids=154b1dc5-6cff-46c7-8f63-0beea92fdf41,36f49a1f-384e-4901-8540-aed9218561b1,5b71a311-8f1b-4b56-8783-498eac64941d
+    value_template: '{ value_json.prices.[] }'
+    json_attributes:
+    - prices
+  - platform: template
+    sensors:
+      station1:
+        friendly_name: 'Keimes'
+        value_template: '{{ states.sensor.fuel.attributes["prices"]["154b1dc5-6cff-46c7-8f63-0beea92fdf41"]["e5"]}}'
+      station2:
+        friendly_name: 'Shell Lustheide'
+        value_template: '{{ states.sensor.fuel.attributes["prices"]["36f49a1f-384e-4901-8540-aed9218561b1"]["e5"]}}'
+      station3:
+        friendly_name: 'Ektra'
+        value_template: '{{ states.sensor.fuel.attributes["prices"]["5b71a311-8f1b-4b56-8783-498eac64941d"]["e5"]}}'

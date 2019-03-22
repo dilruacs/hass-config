@@ -1,0 +1,36 @@
+# Licht an nach Sonnuntergang
+# Vitrine + LED Couch eine Stunde vorher
+- alias: Wohnzimmer Lichtgruppe 1 an
+  trigger:
+    platform: sun
+    event: sunset
+    offset: "-01:00:00"
+  action:
+    service: light.turn_on
+    entity_id: group.lights_wohnzimmer_1
+
+- alias: Wohnzimmer Lichtgruppe 2 an
+  trigger:
+    platform: sun
+    event: sunset
+    offset: "-00:30:00"
+  action:
+    service: light.turn_on
+    entity_id: group.lights_wohnzimmer_2
+
+- alias: Wohnzimmer Lichtgruppe 3 an
+  trigger:
+    platform: sun
+    event: sunset
+  action:
+    service: light.turn_on
+    entity_id: group.lights_wohnzimmer_3
+
+# Licht aus wenn Bettzeit
+- alias: Wohnzimmer Licht aus
+  trigger:
+    platform: time
+    at: '23:45:00'
+  action:
+    service: light.turn_off
+    entity_id: group.lights_wohnzimmer_all

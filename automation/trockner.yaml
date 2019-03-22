@@ -1,0 +1,136 @@
+# Set Trockner selector
+- alias: Set Dryer Mode Selector
+  trigger:
+    platform: mqtt
+    topic: "stat/sonoff-trockner/program"
+  action:
+    service: input_select.select_option
+    data_template:
+      entity_id: input_select.dryer_mode
+      option: "{{ trigger.payload }}"
+
+# Set Trockner status
+- alias: Set Dryer Mode
+  trigger:
+    platform: state
+    entity_id: input_select.dryer_mode
+  action:
+    service: mqtt.publish
+    data_template:
+      topic: "stat/sonoff-trockner/program"
+      retain: true
+      payload: "{{ states('input_select.dryer_mode') }}"
+
+# Wenn Steckdose aus: status -> off
+- alias: Set Dryer off
+  trigger:
+    platform: state
+    entity_id: switch.trockner
+    to: 'off'
+  action:
+    - service: input_select.select_option
+      data:
+        entity_id: input_select.dryer_mode
+        option: "off"
+    - service: timer.cancel
+      entity_id: timer.dryer_off
+
+# Wenn power < 5 && status == done: status -> off
+- alias: Dryer done off
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.verbrauch_trockner
+    below: 5
+  condition:
+    condition: state
+    entity_id: input_select.dryer_mode
+    state: "done"
+  action:
+    service: input_select.select_option
+    data:
+      entity_id: input_select.dryer_mode
+      option: "off"
+
+# Wenn power > 500 && (status == done || status == off): status -> running
+- alias: Dryer start
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.verbrauch_trockner
+    above: 5
+  condition:
+    condition: or
+    conditions:
+      - condition: state
+        entity_id: input_select.dryer_mode
+        state: "done"
+      - condition: state
+        entity_id: input_select.dryer_mode
+        state: "off"
+  action:
+    service: input_select.select_option
+    data:
+      entity_id: input_select.dryer_mode
+      option: "running"
+
+# Wenn power < 15 && status == running: status -> done
+- alias: Dryer done
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.verbrauch_trockner
+    below: 15
+  condition:
+    condition: state
+    entity_id: input_select.dryer_mode
+    state: "running"
+  action:
+    service: input_select.select_option
+    data:
+      entity_id: input_select.dryer_mode
+      option: "done"
+
+# Wenn Trockenprogramm fertig:
+#   - notification
+#   - strom aus nach 5 Minuten
+- trigger:
+    platform: state
+    entity_id: input_select.dryer_mode
+    to: 'done'
+  action:
+    - service: persistent_notification.create
+      data:
+        message: "Trockenprogramm ist fertig"
+        title: "Trockner status"
+        notification_id: "dryer_done"
+    - service: timer.start
+      entity_id: timer.dryer_off
+
+# Wenn ein neues Trockenprogramm anfängt oder der Trockner aus geht
+#   - dismiss notification
+- trigger:
+    platform: state
+    entity_id: input_select.dryer_mode
+    from: 'done'
+  action:
+    service: persistent_notification.dismiss
+    data:
+      notification_id: "dryer_done"
+
+# Wenn ein neues Trockenprogramm anfängt:
+#   - cancel timer für Stromabschaltung
+- trigger:
+    platform: state
+    entity_id: input_select.dryer_mode
+    to: 'running'
+  action:
+    service: timer.cancel
+    entity_id: timer.dryer_off
+
+# Trockner timeout vorbei: Strom aus
+#- trigger:
+#    platform: event
+#    event_type: timer.finished
+#    event_data:
+#      entity_id: timer.dryer_off
+#  action:
+#    service: switch.turn_off
+#    entity_id: switch.trockner

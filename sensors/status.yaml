@@ -1,0 +1,27 @@
+  - platform: template
+    sensors:
+      washer_mode_verbose:
+        friendly_name: Waschmaschine Status
+        value_template: >-
+          {% if is_state('input_select.washer_mode', 'off') %}
+            aus
+          {% elif is_state('input_select.washer_mode', 'running') %}
+            läuft
+          {% elif is_state('input_select.washer_mode', 'done') %}
+            fertig
+          {% elif is_state('input_select.washer_mode', 'finishing') %}
+            fast fertig
+          {% endif %}
+
+  - platform: template
+    sensors:
+      dryer_mode_verbose:
+        friendly_name: Trockner Status
+        value_template: >-
+          {% if is_state('input_select.dryer_mode', 'off') %}
+            aus
+          {% elif is_state('input_select.dryer_mode', 'running') %}
+            läuft
+          {% elif is_state('input_select.dryer_mode', 'done') %}
+            fertig
+          {% endif %}

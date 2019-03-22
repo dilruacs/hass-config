@@ -1,0 +1,8 @@
+  licht_schuppen:
+    duration: '00:02:00'
+  spindry_detect:
+    duration: '00:02:00'
+  washer_off:
+    duration: '00:05:00'
+  dryer_off:
+    duration: '00:05:00'

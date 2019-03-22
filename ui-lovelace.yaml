@@ -1,0 +1,57 @@
+title: My Awesome Home
+views:
+    # View tab title.
+  - title: Home
+    id: home
+    icon: mdi:home
+    cards:
+      - type: glance
+        title: Ort
+        entities:
+          - device_tracker.galaxys8_3
+          - device_tracker.nexus_6
+  - title: Wohnzimmer
+    id: wohnzimmer
+    icon: mdi:sofa
+    cards:
+      - type: entities
+        title: Licht
+        entities:
+          - light.vitrine
+          - light.couchlampe
+          - light.stehlampe 
+      - type: entities
+        title: Heizung
+        entities:
+          - climate.wohnzimmer
+      - type: media-control
+        entity: media_player.panasonic_viera_tv
+      - type: media-control
+        entity: media_player.kodi
+  - title: Heizung
+    id: heizung
+    icon: mdi:radiator
+    cards:
+      - type: entities
+        title: Heizung
+        entities:
+          - climate.wohnzimmer
+          - climate.schlafzimmer
+          - climate.kinderzimmer
+          - climate.kueche
+          - climate.bad
+  - title: Garten
+    id: garten
+    icon: mdi:tree
+    cards:
+      - type: glance
+        entities:
+        - binary_sensor.bewegung_schuppen
+        - binary_sensor.tuer_schuppen
+        - sensor.gartenweg_status
+        - sensor.dht_sensor_temperature
+        - sensor.dht_sensor_humidity
+        - timer.licht_schuppen
+resources:
+  - url: /customcards/github/nervetattoo/simple-thermostat.js?track=true
+    type: module

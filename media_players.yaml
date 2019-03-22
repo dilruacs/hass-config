@@ -1,0 +1,10 @@
+  - platform: my_panasonic_viera
+    host: !secret tv_fqdn
+  - platform: kodi
+    host: !secret kodi_wz_fqdn
+  - platform: mpd
+    name: phoniebox
+    host: !secret phoniebox_fqdn
+  - platform: firetv
+    host: !secret firetv_fqdn
+    name: My Fire TV Stick

@@ -1,0 +1,72 @@
+#  - name: sonoff-rgbcouch
+#    platform: mqtt
+#    state_topic: sonoff-rgbcouch/relay/0
+#    command_topic: sonoff-rgbcouch/relay/0/set
+#    payload_on: 1
+#    payload_off: 0
+#    availability_topic: sonoff-rgbcouch/status
+#    payload_available: 1
+#    payload_not_available: 0
+#    brightness_state_topic: sonoff-rgbcouch/brightness
+#    brightness_command_topic: sonoff-rgbcouch/brightness/set
+#    rgb_state_topic: sonoff-rgbcouch/rgb
+#    rgb_command_topic: sonoff-rgbcouch/rgb/set
+#    color_temp_command_topic: sonoff-rgbcouch/mired/set
+#    white_value_state_topic: sonoff-rgbcouch/channel/3
+#    white_value_command_topic: sonoff-rgbcouch/channel/3/set
+#    retain: true
+  - name: sonoff-rgbcouch
+    platform: mqtt
+    state_topic: stat/sonoff-rgbcouch/POWER
+    command_topic: cmnd/sonoff-rgbcouch/POWER
+    payload_on: "ON"
+    payload_off: "OFF"
+    availability_topic: "tele/sonoff-rgbcouch/LWT"
+    qos: 1
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    rgb_command_topic: cmnd/sonoff-rgbcouch/color
+    white_value_command_topic: cmnd/sonoff-rgbcouch/channel4
+    brightness_scale: 100
+    brightness_command_topic: cmnd/sonoff-rgbcouch/dimmer
+    retain: true
+  - name: Vitrine
+    platform: mqtt
+    command_topic: cmnd/fhem/wz_Vitrine/POWER
+    state_topic: stat/fhem/wz_Vitrine/POWER
+    payload_on: "on"
+    payload_off: "off"
+    retain: true
+  - platform: mqtt
+    name: "Couchlampe"
+    state_topic: "stat/sonoff-couchlampe/POWER"
+    command_topic: "cmnd/sonoff-couchlampe/POWER"
+    availability_topic: "tele/sonoff-couchlampe/LWT"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    retain: true
+  - platform: mqtt
+    name: "Stehlampe"
+    state_topic: "stat/sonoff-stehlampe/POWER"
+    command_topic: "cmnd/sonoff-stehlampe/POWER"
+    availability_topic: "tele/sonoff-stehlampe/LWT"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    retain: true
+  - platform: mqtt
+    name: "Schuppen"
+    state_topic: "stat/sonoff-schuppen/POWER"
+    command_topic: "cmnd/sonoff-schuppen/POWER"
+    availability_topic: "tele/sonoff-schuppen/LWT"
+    qos: 1
+    payload_on: "ON"
+    payload_off: "OFF"
+    payload_available: "Online"
+    payload_not_available: "Offline"
+    retain: true

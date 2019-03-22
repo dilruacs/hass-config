@@ -1,0 +1,20 @@
+- name: !secret work_person1_desc
+  latitude: !secret work_person1_lat
+  longitude: !secret work_person1_long
+  radius: 100
+- name: !secret work_person2_desc
+  latitude: !secret work_person2_lat
+  longitude: !secret work_person2_long
+  radius: 100
+- name: !secret stammtisch_desc
+  latitude: !secret stammtisch_lat
+  longitude: !secret stammtisch_long
+  radius: 100
+- name: !secret kita_desc
+  latitude: !secret kita_lat
+  longitude: !secret kita_long
+  radius: 100
+- name: !secret schule_desc
+  latitude: !secret schule_lat
+  longitude: !secret schule_long
+  radius: 100
