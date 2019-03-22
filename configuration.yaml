@@ -17,10 +17,10 @@ homeassistant:
 
 logger:
   default: warn
-  logs:
-    aiounifi: debug
-    homeassistant.components.unifi: debug
-    homeassistant.components.switch.unifi: debug
+#  logs:
+#    aiounifi: debug
+#    homeassistant.components.unifi: debug
+#    homeassistant.components.switch.unifi: debug
 
 recorder:
   db_url: !secret ha_recorder_db
