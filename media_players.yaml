@@ -5,6 +5,6 @@
   - platform: mpd
     name: phoniebox
     host: !secret phoniebox_fqdn
-  - platform: firetv
+  - platform: androidtv
     host: !secret firetv_fqdn
     name: My Fire TV Stick
