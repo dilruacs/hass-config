@@ -35,14 +35,18 @@ views:
           group: true
           hide:
             controls: true
+          toggle_power: false
         - type: custom:mini-media-player
           entity: media_player.kodi
           group: True
           source: icon
           info: short
+          artwork: cover
+          replace_mute: stop
           hide:
             power: True
             volume: True
+            name: True
   - title: Heizung
     id: heizung
     icon: mdi:radiator
