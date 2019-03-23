@@ -72,6 +72,20 @@ views:
         entities:
           - switch.waschmaschine
           - sensor.washer_mode_verbose
+  - title: Infrastruktur
+    id: infrastructure
+    icon: mdi:lan
+    cards:
+      - type: glance
+        entities:
+          - sensor.verbrauch_freenas
+          - sensor.ml1610
+      - type: entities
+        entities:
+          - switch.freenas
+          - switch.drucker
+          - switch.tv
+          - switch.htpc
 resources:
   - url: /customcards/github/nervetattoo/simple-thermostat.js?track=true
     type: module
