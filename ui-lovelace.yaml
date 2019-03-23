@@ -94,7 +94,7 @@ views:
           - switch.tv
           - switch.htpc
 resources:
-  - url: /github/nervetattoo/simple-thermostat.js?track=true
+  - url: /local/github/nervetattoo/simple-thermostat.js?track=true
     type: module
-  - url: /github/kalkih/mini-media-player-bundle.js?v=1.0.3
+  - url: /local/github/kalkih/mini-media-player-bundle.js?v=1.0.3
     type: module
