@@ -10,8 +10,10 @@ views:
         entities:
           - device_tracker.galaxys8_3
           - device_tracker.nexus_6
-      - type: picture
-        image: 'https://www.dwd.de/DE/wetter/wetterundklima_vorort/nordrhein-westfalen/_functions/bildgalerie/wetter_aktuell.jpg?view=nasImage&nn=561200'
+      - type: weather-forecast
+        entity: weather.openweathermap
+      - type: picture-entity
+        entity: camera.wetterradar
   - title: Wohnzimmer
     id: wohnzimmer
     icon: mdi:sofa
