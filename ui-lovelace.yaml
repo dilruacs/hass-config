@@ -94,7 +94,7 @@ views:
     cards:
       - type: glance
         entities:
-          - sensor.verbrauch_freenas
+          - sensor.freenas
           - sensor.ml_1610
       - type: entities
         entities:
