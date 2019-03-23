@@ -10,6 +10,8 @@ views:
         entities:
           - device_tracker.galaxys8_3
           - device_tracker.nexus_6
+      - type: picture
+        image: 'https://www.dwd.de/DE/wetter/wetterundklima_vorort/nordrhein-westfalen/_functions/bildgalerie/wetter_aktuell.jpg?view=nasImage&nn=561200'
   - title: Wohnzimmer
     id: wohnzimmer
     icon: mdi:sofa
@@ -19,7 +21,7 @@ views:
         entities:
           - light.vitrine
           - light.couchlampe
-          - light.stehlampe 
+          - light.stehlampe
       - type: entities
         title: Heizung
         entities:
