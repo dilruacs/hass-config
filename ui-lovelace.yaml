@@ -68,6 +68,10 @@ views:
         entities:
           - switch.trockner
           - sensor.dryer_mode_verbose
+      - type: entities
+        entities:
+          - switch.waschmaschine
+          - sensor.washer_mode_verbose
 resources:
   - url: /customcards/github/nervetattoo/simple-thermostat.js?track=true
     type: module
