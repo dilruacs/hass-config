@@ -33,11 +33,16 @@ views:
         - type: custom:mini-media-player
           entity: media_player.panasonic_viera_tv
           group: true
+          hide:
+            controls: true
         - type: custom:mini-media-player
           entity: media_player.kodi
           group: True
           source: icon
           info: short
+          hide:
+            power: True
+            volume: True
   - title: Heizung
     id: heizung
     icon: mdi:radiator
