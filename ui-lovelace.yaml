@@ -77,9 +77,9 @@ views:
     cards:
       - type: glance
         entities:
-          - sensor.verbrauch_waschmaschine
-          - sensor.verbrauch_trockner
-          - sensor.verbrauch_kuehlschrank
+          - sensor.waschmaschine
+          - sensor.trockner
+          - sensor.kuehlschrank
       - type: entities
         entities:
           - switch.trockner
