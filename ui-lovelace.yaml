@@ -79,7 +79,7 @@ views:
       - type: glance
         entities:
           - sensor.verbrauch_freenas
-          - sensor.ml1610
+          - sensor.ml_1610
       - type: entities
         entities:
           - switch.freenas
