@@ -90,3 +90,5 @@ views:
 resources:
   - url: /customcards/github/nervetattoo/simple-thermostat.js?track=true
     type: module
+  - url: /customcards/github/kalkih/mini-media-player-bundle.js?v=1.0.3
+    type: module
