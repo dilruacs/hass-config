@@ -1,19 +1,19 @@
-  - name: Verbrauch FreeNAS
+  - name: FreeNAS
     platform: mqtt
     state_topic: tele/sonoff-freenas/SENSOR
     value_template: '{{ value_json.ENERGY.Power }}'
     unit_of_measurement: W
-  - name: Verbrauch Trockner
+  - name: Trockner
     platform: mqtt
     state_topic: tele/sonoff-trockner/SENSOR
     value_template: '{{ value_json.ENERGY.Power }}'
     unit_of_measurement: W
-  - name: Verbrauch Waschmaschine
+  - name: Waschmaschine
     platform: mqtt
     state_topic: tele/sonoff-wasch/SENSOR
     value_template: '{{ value_json.ENERGY.Power }}'
     unit_of_measurement: W
-  - name: Verbrauch Kuehlschrank
+  - name: Kuehlschrank
     platform: mqtt
     state_topic: tele/sonoff-huehl/SENSOR
     value_template: '{{ value_json.ENERGY.Power }}'

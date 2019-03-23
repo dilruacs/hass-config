@@ -56,14 +56,15 @@ views:
         - sensor.dht_sensor_temperature
         - sensor.dht_sensor_humidity
         - timer.licht_schuppen
-  - title: Keller
-    id: keller
+  - title: Grossgeraete
+    id: grossgeraete
     icon: mdi:washing-machine
     cards:
       - type: glance
         entities:
           - sensor.verbrauch_waschmaschine
           - sensor.verbrauch_trockner
+          - sensor.verbrauch_kuehlschrank
       - type: entities
         entities:
           - switch.trockner
