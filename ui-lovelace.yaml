@@ -56,6 +56,18 @@ views:
         - sensor.dht_sensor_temperature
         - sensor.dht_sensor_humidity
         - timer.licht_schuppen
+  - title: Keller
+    id: keller
+    icon: mdi:washing-machine
+    cards:
+      - type: glance
+        entities:
+          - sensor.verbrauch_waschmaschine
+          - sensor.verbrauch_trockner
+      - type: entities
+        entities:
+          - switch.trockner
+          - sensor.dryer_mode_verbose
 resources:
   - url: /customcards/github/nervetattoo/simple-thermostat.js?track=true
     type: module
