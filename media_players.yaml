@@ -8,4 +8,4 @@
   - platform: androidtv
     host: !secret firetv_fqdn
     name: My Fire TV Stick
-    adbkey: "!secret adbkey_file"
+    adbkey: !secret adbkey_file
