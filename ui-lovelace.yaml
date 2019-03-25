@@ -47,6 +47,7 @@ views:
             name: True
         - type: custom:mini-media-player
           entity: media_player.my_fire_tv_stick
+          group: true
           artwork: cover
           hide:
             power: True
