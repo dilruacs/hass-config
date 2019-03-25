@@ -49,6 +49,13 @@ views:
             name: True
         - type: custom:mini-media-player
           entity: media_player.my_fire_tv_stick
+          source: icon
+          info: short
+          artwork: cover
+          hide:
+            power: True
+            volume: True
+            name: True
   - title: Heizung
     id: heizung
     icon: mdi:radiator
