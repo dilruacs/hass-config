@@ -47,7 +47,7 @@ views:
             power: True
             volume: True
             name: True
-        - type: custom:mini-media-media_player
+        - type: custom:mini-media_player
           entity: media_player.my_fire_tv_stick
   - title: Heizung
     id: heizung
