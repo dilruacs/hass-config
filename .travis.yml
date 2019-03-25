@@ -3,6 +3,8 @@ python:
   - "3.5.3"
 before_install:
   - mv travis_secrets.yaml secrets.yaml
+  - mv travis-fakekey adbkey
+  - touch adbkey.pub
 install:
   # - pip3 install homeassistant==0.64.3
   - pip3 install homeassistant
