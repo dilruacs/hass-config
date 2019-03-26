@@ -6,8 +6,7 @@ before_install:
   - mv travis-fakekey adbkey
   - touch adbkey.pub
   - wget https://raw.githubusercontent.com/custom-components/custom_updater/master/custom_components/custom_updater.py
-  - git clone git@github.com:dilruacs/home-assistant-custom-components.git
-  - ln -s home-assistant-custom-components/custom_components .
+  - git clone https://github.com/dilruacs/home-assistant-custom-components.git .
 install:
   # - pip3 install homeassistant==0.64.3
   - pip3 install homeassistant
