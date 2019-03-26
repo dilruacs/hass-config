@@ -9,3 +9,5 @@
     host: !secret firetv_fqdn
     name: My Fire TV Stick
     adbkey: !secret adbkey_file
+  - platform: sony
+    host: !secret bdp3200_fqdn
