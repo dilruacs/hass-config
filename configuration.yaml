@@ -17,7 +17,9 @@ homeassistant:
 
 logger:
   default: warn
-#  logs:
+  logs:
+    homeassistant.components.sony: debug
+    homeassistant.components.sony.media_player: debug
 #    aiounifi: debug
 #    homeassistant.components.unifi: debug
 #    homeassistant.components.switch.unifi: debug
