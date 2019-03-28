@@ -28,8 +28,6 @@ views:
         title: Heizung
         entities:
           - climate.wohnzimmer
-      - type: media-control
-        entity: media_player.bdps3200
       - type: entities
         entities:
         - type: custom:mini-media-player
@@ -55,6 +53,9 @@ views:
             power: True
             volume: True
             name: True
+        - type: custom.mini-media-player
+          entity: media_player.bdps3200
+          group: True
   - title: Heizung
     id: heizung
     icon: mdi:radiator
