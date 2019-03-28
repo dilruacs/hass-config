@@ -68,6 +68,7 @@ config:
 history:
 sun:
 map:
+system_health:
 
 #cloud:
 #  google_actions:
