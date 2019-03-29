@@ -35,7 +35,7 @@
 # Wenn power < 3 && status == done: status -> off
 - trigger:
     platform: numeric_state
-    entity_id: sensor.verbrauch_waschmaschine
+    entity_id: sensor.waschmaschine
     below: 3
   condition:
     condition: state
@@ -50,7 +50,7 @@
 # Wenn power < 10 && status == finishing: status -> done
 - trigger:
     platform: numeric_state
-    entity_id: sensor.verbrauch_waschmaschine
+    entity_id: sensor.waschmaschine
     below: 10
   condition:
     condition: state
@@ -65,7 +65,7 @@
 # Wenn power > 50 && (status == off || status == done): status -> running
 - trigger:
     platform: numeric_state
-    entity_id: sensor.verbrauch_waschmaschine
+    entity_id: sensor.waschmaschine
     above: 50
   condition:
     condition: or
@@ -85,7 +85,7 @@
 # Wenn 350 < power < 1000 && status == running && timer == idle: start timer (120s)
 - trigger:
     platform: numeric_state
-    entity_id: sensor.verbrauch_waschmaschine
+    entity_id: sensor.waschmaschine
     below: 1000
     above: 350
   condition:
@@ -104,7 +104,7 @@
 # Wenn (power < 250 || power > 1000) && status == running: cancel timer
 - trigger:
     platform: numeric_state
-    entity_id: sensor.verbrauch_waschmaschine
+    entity_id: sensor.waschmaschine
     below: 250
   condition:
     condition: and
@@ -120,7 +120,7 @@
     entity_id: timer.spindry_detect
 - trigger:
     platform: numeric_state
-    entity_id: sensor.verbrauch_waschmaschine
+    entity_id: sensor.waschmaschine
     above: 1000
   condition:
     condition: and

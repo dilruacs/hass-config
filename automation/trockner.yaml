@@ -39,7 +39,7 @@
 - alias: Dryer done off
   trigger:
     platform: numeric_state
-    entity_id: sensor.verbrauch_trockner
+    entity_id: sensor.trockner
     below: 5
   condition:
     condition: state
@@ -55,7 +55,7 @@
 - alias: Dryer start
   trigger:
     platform: numeric_state
-    entity_id: sensor.verbrauch_trockner
+    entity_id: sensor.trockner
     above: 5
   condition:
     condition: or
@@ -76,7 +76,7 @@
 - alias: Dryer done
   trigger:
     platform: numeric_state
-    entity_id: sensor.verbrauch_trockner
+    entity_id: sensor.trockner
     below: 15
   condition:
     condition: state
