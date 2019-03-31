@@ -28,6 +28,8 @@ views:
         title: Heizung
         entities:
           - climate.wohnzimmer
+      - type: media-control
+        entity: media_player.sony_dmr
       - type: entities
         entities:
         - type: custom:mini-media-player
