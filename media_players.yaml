@@ -12,6 +12,3 @@
   - platform: sony
     host: !secret bdp3200_fqdn
     name: bdps3200
-  - platform: dlna_dmr
-    url: !secret sony_dmr_url
-    name: sony_dmr
