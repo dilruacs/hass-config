@@ -13,6 +13,7 @@ views:
       - type: custom:simple-weather-card
         entity: weather.openweathermap
         name: Köln
+        backdrop: true
       - type: picture-entity
         entity: camera.wetterradar
   - title: Wohnzimmer
