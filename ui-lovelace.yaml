@@ -53,7 +53,7 @@ views:
             power: True
             volume: True
             name: True
-        - type: custom.mini-media-player
+        - type: custom:mini-media-player
           entity: media_player.bdps3200
           group: True
   - title: Heizung
