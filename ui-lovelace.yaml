@@ -58,6 +58,8 @@ views:
         - type: custom:mini-media-player
           entity: media_player.bdps3200
           group: True
+          hide:
+            volume: True
   - title: Heizung
     id: heizung
     icon: mdi:radiator
@@ -99,6 +101,12 @@ views:
         entities:
           - switch.waschmaschine
           - sensor.washer_mode_verbose
+      - type: custom:mini-graph-card
+        hours_to_show: 2
+        points_per_hour: 60
+        entities:
+          - sensor.waschmaschine
+          - sensor.trockner
   - title: Infrastruktur
     id: infrastructure
     icon: mdi:lan
@@ -119,4 +127,6 @@ resources:
   - url: /local/github/kalkih/mini-media-player-bundle.js?v=1.0.3
     type: module
   - url: /local/github/kalkih/simple-weather-card.bundle.js?v=0.3.0
+    type: module
+  - url: /local/github/kalkih/mini-graph-card-bundle.js?v=0.3.2
     type: module
