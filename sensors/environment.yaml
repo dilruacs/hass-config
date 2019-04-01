@@ -6,3 +6,7 @@
     unit_of_measurement: "%"
     name: dht_sensor_humidity
     state_topic: homeassistant/sensor/dht_sensor_humidity/state
+  - platform: mqtt
+    unit_of_measurement: "\u00b0C"
+    name: wohnzimmer_temperature
+    state_topic: tele/fhem/fht_Wohnzimmer/measured-temp
