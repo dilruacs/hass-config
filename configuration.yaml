@@ -93,6 +93,7 @@ http:
 custom_updater:
   card_urls:
     - https://raw.githubusercontent.com/kalkih/mini-media-player/master/tracker.json
+    - https://raw.githubusercontent.com/kalkih/simple-weather-card/master/tracker.json
 lovelace:
   mode: yaml
 
