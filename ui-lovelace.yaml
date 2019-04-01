@@ -10,8 +10,9 @@ views:
         entities:
           - device_tracker.galaxys8_3
           - device_tracker.nexus_6
-      - type: weather-forecast
+      - type: custom:simple-weather-card
         entity: weather.openweathermap
+        name: Köln
       - type: picture-entity
         entity: camera.wetterradar
   - title: Wohnzimmer
