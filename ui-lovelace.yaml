@@ -30,8 +30,13 @@ views:
         title: Heizung
         entities:
           - type: custom:mini-graph-card
+            hours_to_show: 24
+            points_per_hour: 12
+            line_width: 1
+            hour24: true
             entities:
-              - sensor.wohnzimmer_temperature
+              - sensor.wohnzimmer-temp
+              - sensor.wohnzimmer-desired-temp
           - climate.wohnzimmer
       - type: entities
         entities:
