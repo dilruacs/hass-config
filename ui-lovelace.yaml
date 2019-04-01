@@ -91,6 +91,10 @@ views:
       - type: custom:mini-graph-card
         hours_to_show: 2
         points_per_hour: 60
+        line_width: 1
+        hour24: true
+        icon: mdi:flash
+        unit: Watt
         entities:
           - sensor.waschmaschine
           - sensor.trockner
