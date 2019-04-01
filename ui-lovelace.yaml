@@ -88,11 +88,12 @@ views:
     id: grossgeraete
     icon: mdi:washing-machine
     cards:
-      - type: glance
+      - type: custom:mini-graph-card
+        hours_to_show: 2
+        points_per_hour: 60
         entities:
           - sensor.waschmaschine
           - sensor.trockner
-          - sensor.kuehlschrank
       - type: entities
         entities:
           - switch.trockner
@@ -101,12 +102,6 @@ views:
         entities:
           - switch.waschmaschine
           - sensor.washer_mode_verbose
-      - type: custom:mini-graph-card
-        hours_to_show: 2
-        points_per_hour: 60
-        entities:
-          - sensor.waschmaschine
-          - sensor.trockner
   - title: Infrastruktur
     id: infrastructure
     icon: mdi:lan
