@@ -8,9 +8,9 @@
     state_topic: homeassistant/sensor/dht_sensor_humidity/state
   - platform: mqtt
     unit_of_measurement: "\u00b0C"
-    name: wohnzimmer-temp
+    name: wohnzimmer_temp
     state_topic: tele/fhem/fht_Wohnzimmer/measured-temp
   - platform: mqtt
     unit_of_measurement: "\u00b0C"
-    name: wohnzimmer-desired-temp
+    name: wohnzimmer_desired_temp
     state_topic: tele/fhem/fht_Wohnzimmer/desired-temp

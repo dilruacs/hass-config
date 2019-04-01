@@ -35,8 +35,8 @@ views:
             line_width: 1
             hour24: true
             entities:
-              - sensor.wohnzimmer-temp
-              - sensor.wohnzimmer-desired-temp
+              - sensor.wohnzimmer_temp
+              - sensor.wohnzimmer_desired_temp
           - climate.wohnzimmer
       - type: entities
         entities:
