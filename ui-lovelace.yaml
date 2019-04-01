@@ -116,5 +116,5 @@ resources:
     type: module
   - url: /local/github/kalkih/mini-media-player-bundle.js?v=1.0.3
     type: module
-  - url: /local/simple-weather-card.bundle.js?v=0.3.0
+  - url: /local/github/kalkih/simple-weather-card.bundle.js?v=0.3.0
     type: module
