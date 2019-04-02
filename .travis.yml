@@ -6,9 +6,9 @@ before_install:
   - mv travis-fakekey adbkey
   - mkdir custom_components
   - git clone https://github.com/dilruacs/home-assistant-custom-components.git
-  - ln -v -s home-assistant-custom-components/custom_components/* custom_components/
+  - mv -v home-assistant-custom-components/custom_components/* custom_components/
   - git clone https://github.com/dilruacs/media_player.sony
-  - ln -v -s media_player.sony/custom_components/* custom_components/
+  - mv -v media_player.sony/custom_components/* custom_components/
   - wget -P custom_components/ https://raw.githubusercontent.com/custom-components/custom_updater/master/custom_components/custom_updater.py
 install:
   # - pip3 install homeassistant==0.64.3
