@@ -4,6 +4,13 @@ views:
   - title: Home
     id: home
     icon: mdi:home
+    popup_cards:
+      sensor.wohnzimmer_desired_temp:
+        title: Heizung Wohnzimmer
+        card:
+          type: entities
+          entities:
+            - sensor.wohnzimmer_desired_temp
     cards:
       - type: glance
         title: Ort
@@ -155,3 +162,7 @@ resources:
     type: module
   - url: /local/github/kalkih/mini-graph-card-bundle.js?v=0.3.2
     type: module
+  - url: /local/github/thomasloven/card-tools.js?track=true
+    type: js
+  - url: /local/github/thomasloven/popup-card.js?track=true
+    type: js
