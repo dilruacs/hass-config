@@ -13,7 +13,7 @@
   - platform: mqtt
     unit_of_measurement: "\u00b0C"
     name: wohnzimmer_desired_temp
-    state_topic: cmnd/fhem/fht_Kinderzimmer/desired-temp
+    state_topic: cmnd/fhem/fht_Wohnzimmer/desired-temp
   - platform: mqtt
     unit_of_measurement: "\u00b0C"
     name: schlafzimmer_temp
