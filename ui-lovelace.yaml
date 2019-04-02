@@ -36,8 +36,10 @@ views:
             hour24: true
             lower_bound: 16
             entities:
-              - sensor.wohnzimmer_temp
-              - sensor.wohnzimmer_desired_temp
+              - entity: sensor.wohnzimmer_temp
+                name: Ist
+              - entity: sensor.wohnzimmer_desired_temp
+                name: Soll
           - climate.wohnzimmer
       - type: entities
         entities:
@@ -83,11 +85,16 @@ views:
             hour24: true
             lower_bound: 16
             entities:
-              - sensor.wohnzimmer_temp
-              - sensor.schlafzimmer_temp
-              - sensor.kinderzimmer_temp
-              - sensor.kueche_temp
-              - sensor.bad_temp
+              - entity: sensor.wohnzimmer_temp
+                name: Wohnzimmer
+              - entity: sensor.schlafzimmer_temp
+                name: Schlafzimmer
+              - entity: sensor.kinderzimmer_temp
+                name: Kinderzimmer
+              - entity: sensor.kueche_temp
+                name: Kueche
+              - entity: sensor.bad_temp
+                name: Bad
           - climate.wohnzimmer
           - climate.schlafzimmer
           - climate.kinderzimmer
