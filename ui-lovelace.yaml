@@ -34,7 +34,6 @@ views:
             points_per_hour: 12
             line_width: 1
             hour24: true
-            lower_bound: 16
             entities:
               - entity: sensor.wohnzimmer_temp
                 name: Ist
@@ -83,7 +82,6 @@ views:
             points_per_hour: 12
             line_width: 1
             hour24: true
-            lower_bound: 16
             entities:
               - entity: sensor.wohnzimmer_temp
                 name: Wohnzimmer
