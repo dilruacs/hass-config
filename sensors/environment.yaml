@@ -14,3 +14,19 @@
     unit_of_measurement: "\u00b0C"
     name: wohnzimmer_desired_temp
     state_topic: cmnd/fhem/fht_Kinderzimmer/desired-temp
+  - platform: mqtt
+    unit_of_measurement: "\u00b0C"
+    name: schlafzimmer_temp
+    state_topic: tele/fhem/fht_Schlafzimmer/measured-temp
+  - platform: mqtt
+    unit_of_measurement: "\u00b0C"
+    name: kinderzimmer_temp
+    state_topic: tele/fhem/fht_Kinderzimmer/measured-temp
+  - platform: mqtt
+    unit_of_measurement: "\u00b0C"
+    name: kueche_temp
+    state_topic: tele/fhem/fht_Kueche/measured-temp
+  - platform: mqtt
+    unit_of_measurement: "\u00b0C"
+    name: bad_temp
+    state_topic: tele/fhem/fht_Bad/measured-temp
