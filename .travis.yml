@@ -4,6 +4,7 @@ python:
 before_install:
   - mv travis_secrets.yaml secrets.yaml
   - mv travis-fakekey adbkey
+  - touch adbkey.pub
   - mkdir custom_components
   - git clone https://github.com/dilruacs/home-assistant-custom-components.git
   - mv -v home-assistant-custom-components/custom_components/* custom_components/
