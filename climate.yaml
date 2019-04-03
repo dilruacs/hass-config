@@ -5,7 +5,7 @@
     temperature_state_topic: cmnd/fhem/fht_Wohnzimmer/desired-temp
     mode_state_topic: cmnd/fhem/fht_Wohnzimmer/desired-temp
     mode_state_template: >-
-      {% if value > 18 %}
+      {% if value|float > 18.0 %}
       'heat'
       {% else %}
       'off'
