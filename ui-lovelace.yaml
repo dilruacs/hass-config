@@ -41,6 +41,7 @@ views:
                 name: Soll
           - type: custom:simple-thermostat
             entity: climate.wohnzimmer
+            name: false
             group: true
             step_size: 1
       - type: entities
