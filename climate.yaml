@@ -3,20 +3,15 @@
     current_temperature_topic: tele/fhem/fht_Wohnzimmer/measured-temp
     temperature_command_topic: cmnd/fhem/fht_Wohnzimmer/desired-temp
     temperature_state_topic: cmnd/fhem/fht_Wohnzimmer/desired-temp
-<<<<<<< HEAD
     mode_state_topic: cmnd/fhem/fht_Wohnzimmer/desired-temp
     modes:
-      - "ON"
-      - "OFF"
+      - "on"
+      - "off"
     mode_state_template: >-
-=======
-    power_state_topic: cmnd/fhem/fht_Wohnzimmer/desired-temp
-    power_state_template: >-
->>>>>>> 98059f0cd6f97deba12df2790b76f096e723599b
       {% if value|float > 18.0 %}
-      ON
+      on
       {% else %}
-      OFF
+      off
       {% endif %}
     retain: true
   - platform: mqtt
@@ -26,13 +21,13 @@
     temperature_state_topic: cmnd/fhem/fht_Kinderzimmer/desired-temp
     mode_state_topic: cmnd/fhem/fht_Kinderzimmer/desired-temp
     modes:
-      - "ON"
-      - "OFF"
+      - "on"
+      - "off"
     mode_state_template: >-
       {% if value|float > 18.0 %}
-      ON
+      on
       {% else %}
-      OFF
+      off
       {% endif %}
     retain: true
   - platform: mqtt
@@ -42,13 +37,13 @@
     temperature_state_topic: cmnd/fhem/fht_Schlafzimmer/desired-temp
     mode_state_topic: cmnd/fhem/fht_Schlafzimmer/desired-temp
     modes:
-      - "ON"
-      - "OFF"
+      - "on"
+      - "off"
     mode_state_template: >-
       {% if value|float > 18.0 %}
-      ON
+      on
       {% else %}
-      OFF
+      off
       {% endif %}
     retain: true
   - platform: mqtt
@@ -58,13 +53,13 @@
     temperature_state_topic: cmnd/fhem/fht_Kueche/desired-temp
     mode_state_topic: cmnd/fhem/fht_Kueche/desired-temp
     modes:
-      - "ON"
-      - "OFF"
+      - "on"
+      - "off"
     mode_state_template: >-
       {% if value|float > 18.0 %}
-      ON
+      on
       {% else %}
-      OFF
+      off
       {% endif %}
     retain: true
   - platform: mqtt
@@ -74,12 +69,12 @@
     temperature_state_topic: cmnd/fhem/fht_Bad/desired-temp
     mode_state_topic: cmnd/fhem/fht_Bad/desired-temp
     modes:
-      - "ON"
-      - "OFF"
+      - "on"
+      - "off"
     mode_state_template: >-
       {% if value|float > 20.0 %}
-      ON
+      on
       {% else %}
-      OFF
+      off
       {% endif %}
     retain: true
