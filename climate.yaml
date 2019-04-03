@@ -5,13 +5,13 @@
     temperature_state_topic: cmnd/fhem/fht_Wohnzimmer/desired-temp
     mode_state_topic: cmnd/fhem/fht_Wohnzimmer/desired-temp
     modes:
-      - "on"
-      - "off"
+      - "ON"
+      - "OFF"
     mode_state_template: >-
       {% if value|float > 18.0 %}
-      on
+      ON
       {% else %}
-      off
+      OFF
       {% endif %}
     retain: true
   - platform: mqtt
@@ -21,13 +21,13 @@
     temperature_state_topic: cmnd/fhem/fht_Kinderzimmer/desired-temp
     mode_state_topic: cmnd/fhem/fht_Kinderzimmer/desired-temp
     modes:
-      - "on"
-      - "off"
+      - "ON"
+      - "OFF"
     mode_state_template: >-
       {% if value|float > 18.0 %}
-      on
+      ON
       {% else %}
-      off
+      OFF
       {% endif %}
     retain: true
   - platform: mqtt
@@ -37,13 +37,13 @@
     temperature_state_topic: cmnd/fhem/fht_Schlafzimmer/desired-temp
     mode_state_topic: cmnd/fhem/fht_Schlafzimmer/desired-temp
     modes:
-      - "on"
-      - "off"
+      - "ON"
+      - "OFF"
     mode_state_template: >-
       {% if value|float > 18.0 %}
-      on
+      ON
       {% else %}
-      off
+      OFF
       {% endif %}
     retain: true
   - platform: mqtt
@@ -53,13 +53,13 @@
     temperature_state_topic: cmnd/fhem/fht_Kueche/desired-temp
     mode_state_topic: cmnd/fhem/fht_Kueche/desired-temp
     modes:
-      - "on"
-      - "off"
+      - "ON"
+      - "OFF"
     mode_state_template: >-
       {% if value|float > 18.0 %}
-      on
+      ON
       {% else %}
-      off
+      OFF
       {% endif %}
     retain: true
   - platform: mqtt
@@ -69,12 +69,12 @@
     temperature_state_topic: cmnd/fhem/fht_Bad/desired-temp
     mode_state_topic: cmnd/fhem/fht_Bad/desired-temp
     modes:
-      - "on"
-      - "off"
+      - "ON"
+      - "OFF"
     mode_state_template: >-
       {% if value|float > 20.0 %}
-      on
+      ON
       {% else %}
-      off
+      OFF
       {% endif %}
     retain: true
