@@ -6,9 +6,9 @@
     mode_state_topic: cmnd/fhem/fht_Wohnzimmer/desired-temp
     mode_state_template: >-
       {% if value|float > 18.0 %}
-      'heat'
+      heat
       {% else %}
-      'off'
+      off
       {% endif %}
     retain: true
   - platform: mqtt
