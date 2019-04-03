@@ -3,10 +3,13 @@
     current_temperature_topic: tele/fhem/fht_Wohnzimmer/measured-temp
     temperature_command_topic: cmnd/fhem/fht_Wohnzimmer/desired-temp
     temperature_state_topic: cmnd/fhem/fht_Wohnzimmer/desired-temp
+    modes:
+      - on
+      - off
     mode_state_topic: cmnd/fhem/fht_Wohnzimmer/desired-temp
     mode_state_template: >-
       {% if value|float > 18.0 %}
-      heat
+      on
       {% else %}
       off
       {% endif %}
