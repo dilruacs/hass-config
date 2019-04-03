@@ -46,7 +46,9 @@ views:
                 name: Ist
               - entity: sensor.wohnzimmer_desired_temp
                 name: Soll
-          - climate.wohnzimmer
+          - type: custom:simple-thermostat
+            entity: climate.wohnzimmer
+            step_size: 1
       - type: entities
         entities:
         - type: custom:mini-media-player
