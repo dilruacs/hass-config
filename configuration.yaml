@@ -72,6 +72,8 @@ sun:
 map:
 system_health:
 zwave:
+  usb_path: !secret zwave_usb
+  network_key: !secret zwave_secret
 
 #cloud:
 #  google_actions:
