@@ -1,0 +1,24 @@
+# Lichtschalter an
+- alias: licht_an
+  trigger:
+    platform: event
+    event_type: zwave.node_event
+    event_data:
+      entity_id: zwave.merten_transmitter_1_gang_switch_2
+      basic_level: 255
+  action:
+    service: light.turn_on
+    entity_id: light.couchlampe
+
+
+# Lichtschalter aus
+- alias: licht_aus
+  trigger:
+    platform: event
+    event_type: zwave.node_event
+    event_data:
+      entity_id: zwave.merten_transmitter_1_gang_switch_2
+      basic_level: 0
+  action:
+    service: light.turn_off
+    entity_id: light.couchlampe
