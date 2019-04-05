@@ -71,6 +71,7 @@ history:
 sun:
 map:
 system_health:
+zwave:
 
 #cloud:
 #  google_actions:
