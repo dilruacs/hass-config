@@ -39,11 +39,7 @@ views:
                 name: Ist
               - entity: sensor.wohnzimmer_desired_temp
                 name: Soll
-          - type: custom:simple-thermostat
-            entity: climate.wohnzimmer
-            name: false
-            group: true
-            step_size: 1
+          - type: climate.wohnzimmer
       - type: entities
         entities:
         - type: custom:mini-media-player
@@ -74,6 +70,23 @@ views:
           group: True
           hide:
             volume: True
+  - title: Kinderzimmer
+    id: kinderzimmer
+    cards:
+      - type: entities
+          - type: custom:mini-graph-card
+            hours_to_show: 24
+            points_per_hour: 12
+            line_width: 1
+            hour24: true
+            entities:
+              - entity: sensor.kinderzimmer_temp
+                name: Ist
+          - type: climate.kinderzimmer
+      - type: entities
+        title: Licht
+        entities:
+          - switch.merten_unknown_type_8001_id_8002_switch       
   - title: Heizung
     id: heizung
     icon: mdi:radiator
