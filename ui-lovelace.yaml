@@ -72,6 +72,7 @@ views:
             volume: True
   - title: Kinderzimmer
     id: kinderzimmer
+    icon: mdi:roller-skate
     cards:
       - type: entities
         title: Heizung
