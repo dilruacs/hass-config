@@ -8,7 +8,7 @@
       basic_level: 255
   action:
     service: light.turn_on
-    entity_id: light.couchlampe
+    entity_id: switch.merten_unknown_type_8001_id_8002_switch
 
 
 # Lichtschalter aus
@@ -21,4 +21,4 @@
       basic_level: 0
   action:
     service: light.turn_off
-    entity_id: light.couchlampe
+    entity_id: switch.merten_unknown_type_8001_id_8002_switch
