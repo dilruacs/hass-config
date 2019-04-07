@@ -85,6 +85,8 @@ views:
             entities:
               - entity: sensor.kinderzimmer_temp
                 name: Ist
+              - entity: sensor.kinderzimmer_desired_temp
+                name: Soll
           - climate.kinderzimmer
       - type: entities
         title: Licht
