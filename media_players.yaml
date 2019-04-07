@@ -1,5 +1,6 @@
   - platform: panasonic_viera
     host: !secret tv_fqdn
+    app_power: true
   - platform: kodi
     host: !secret kodi_wz_fqdn
   - platform: mpd
