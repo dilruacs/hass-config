@@ -1,4 +1,4 @@
-  - platform: my_panasonic_viera
+  - platform: panasonic_viera
     host: !secret tv_fqdn
   - platform: kodi
     host: !secret kodi_wz_fqdn
