@@ -92,6 +92,7 @@ views:
         title: Licht
         entities:
           - switch.merten_unknown_type_8001_id_8002_switch
+          - light.6001948d9b03_192_168_30_245
   - title: Heizung
     id: heizung
     icon: mdi:radiator
