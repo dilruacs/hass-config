@@ -74,4 +74,4 @@
     automatic_add: true
     devices:
       192.168.30.245:
-        name: rgb_hochbett
+        name: "RGB Hochbett"
