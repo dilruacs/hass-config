@@ -20,6 +20,7 @@ views:
         points_per_hour: 12
         line_width: 1
         hour24: true
+        decimals: 3
         entities:
           - entity: sensor.station1
             name: Keimes
