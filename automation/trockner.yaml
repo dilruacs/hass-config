@@ -96,24 +96,12 @@
     entity_id: input_select.dryer_mode
     to: 'done'
   action:
-    - service: persistent_notification.create
+    - service: notify.telegram_bot
       data:
         message: "Trockenprogramm ist fertig"
         title: "Trockner status"
-        notification_id: "dryer_done"
     - service: timer.start
       entity_id: timer.dryer_off
-
-# Wenn ein neues Trockenprogramm anfängt oder der Trockner aus geht
-#   - dismiss notification
-- trigger:
-    platform: state
-    entity_id: input_select.dryer_mode
-    from: 'done'
-  action:
-    service: persistent_notification.dismiss
-    data:
-      notification_id: "dryer_done"
 
 # Wenn ein neues Trockenprogramm anfängt:
 #   - cancel timer für Stromabschaltung
