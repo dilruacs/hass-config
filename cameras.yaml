@@ -1,8 +1,5 @@
   - name: Schuppen
     platform: zoneminder
-  - name: Wetterradar
-    platform: generic
-    still_image_url: 'https://www.dwd.de/DE/wetter/wetterundklima_vorort/nordrhein-westfalen/_functions/bildgalerie/wetter_aktuell.jpg?view=nasImage&nn=561200'
   - name: person1
     platform: generic
     still_image_url: !secret person1_trackurl
