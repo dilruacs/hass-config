@@ -80,6 +80,7 @@ system_health:
 zwave:
   usb_path: !secret zwave_usb
   network_key: !secret zwave_secret
+upnp:
 
 #cloud:
 #  google_actions:
