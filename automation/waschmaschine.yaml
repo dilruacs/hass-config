@@ -155,11 +155,10 @@
     entity_id: input_select.washer_mode
     to: 'done'
   action:
-    - service: persistent_notification.create
+    - service: notify.telegram_bot
       data:
         message: "Waschprogramm ist fertig"
         title: "Waschmaschine status"
-        notification_id: "washer_done"
     - service: timer.start
       entity_id: timer.washer_off
 
@@ -172,17 +171,6 @@
   action:
     - service: timer.cancel
       entity_id: timer.washer_off
-
-# Wenn ein neues Waschprogramm anfängt oder der Waschmaschine aus geht:
-#   - dismiss notification
-- trigger:
-    platform: state
-    entity_id: input_select.washer_mode
-    from: 'done'
-  action:
-    service: persistent_notification.dismiss
-    data:
-      notification_id: "washer_done"
 
 # Waschmaschine timeout vorbei: Strom aus
 - trigger:
