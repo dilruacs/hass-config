@@ -14,6 +14,18 @@ views:
         entity: weather.openweathermap
         name: Köln
         backdrop: true
+      - type: custom:mini-graph-card
+        hours_to_show: 24
+        points_per_hour: 12
+        line_width: 1
+        hour24: true
+        entities:
+          - entity: sensor.station1
+            name: Keimes
+          - entity: sensor.station2
+            name: Lustheide
+          - entity: sensor.station3
+            name: Ektra
   - title: Wohnzimmer
     id: wohnzimmer
     icon: mdi:sofa
