@@ -72,3 +72,6 @@
     retain: true
   - platform: flux_led
     automatic_add: true
+    device:
+      192.168.30.40:
+        name: rgb_hochbett
