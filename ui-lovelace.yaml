@@ -15,6 +15,7 @@ views:
         name: Köln
         backdrop: true
       - type: custom:mini-graph-card
+        name: Benzinpreise (E5)
         hours_to_show: 24
         points_per_hour: 12
         line_width: 1
