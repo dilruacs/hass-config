@@ -28,7 +28,7 @@ kueche_soll_temp:
 
 bad_soll_temp:
   name: Bad
-  min: 16
-  max: 25
+  min: 18
+  max: 27
   unit_of_measurement: "\u00b0C"
   icon: mdi:thermometer
