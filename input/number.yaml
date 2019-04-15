@@ -2,3 +2,23 @@ schlafzimmer_soll_temp:
   name: Schlafzimmer
   min: 16
   max: 25
+
+wohnzimmer_soll_temp:
+  name: Schlafzimmer
+  min: 16
+  max: 25
+
+kinderzimmer_soll_temp:
+  name: Schlafzimmer
+  min: 16
+  max: 25
+
+kueche_soll_temp:
+  name: Schlafzimmer
+  min: 16
+  max: 25
+
+bad_soll_temp:
+  name: Schlafzimmer
+  min: 16
+  max: 25

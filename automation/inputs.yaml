@@ -23,3 +23,107 @@
     data_template:
       entity_id: climate.schlafzimmer
       temperature: "{{ float(states('input_number.schlafzimmer_soll_temp')) }}"
+
+- alias: Set Wohnzimmer Temp slider
+  trigger:
+    platform: mqtt
+    topic: cmnd/fhem/fht_Wohnzimmer/desired-temp
+  condition:
+    condition: template
+    value_template: "{{ trigger.payload != states('input_number.wohnzimmer_soll_temp') }}"
+  action:
+    service: input_number.set_value
+    data_template:
+      entity_id: input_number.wohnzimmer_soll_temp
+      value: "{{ trigger.payload }}"
+
+- alias: Wohnzimmer Temp slider moved
+  trigger:
+    platform: state
+    entity_id: input_number.wohnzimmer_soll_temp
+  condition:
+    condition: template
+    value_template: "{{ trigger.payload != states('input_number.wohnzimmer_soll_temp') }}"
+  action:
+    service: climate.set_temperature
+    data_template:
+      entity_id: climate.wohnzimmer
+      temperature: "{{ float(states('input_number.wohnzimmer_soll_temp')) }}"
+
+- alias: Set Kinderzimmer Temp slider
+  trigger:
+    platform: mqtt
+    topic: cmnd/fhem/fht_Kinderzimmer/desired-temp
+  condition:
+    condition: template
+    value_template: "{{ trigger.payload != states('input_number.kinderzimmer_soll_temp') }}"
+  action:
+    service: input_number.set_value
+    data_template:
+      entity_id: input_number.kinderzimmer_soll_temp
+      value: "{{ trigger.payload }}"
+
+- alias: Kinderzimmer Temp slider moved
+  trigger:
+    platform: state
+    entity_id: input_number.kinderzimmer_soll_temp
+  condition:
+    condition: template
+    value_template: "{{ trigger.payload != states('input_number.kinderzimmer_soll_temp') }}"
+  action:
+    service: climate.set_temperature
+    data_template:
+      entity_id: climate.kinderzimmer
+      temperature: "{{ float(states('input_number.kinderzimmer_soll_temp')) }}"
+
+- alias: Set Kueche Temp slider
+  trigger:
+    platform: mqtt
+    topic: cmnd/fhem/fht_Kueche/desired-temp
+  condition:
+    condition: template
+    value_template: "{{ trigger.payload != states('input_number.kueche_soll_temp') }}"
+  action:
+    service: input_number.set_value
+    data_template:
+      entity_id: input_number.kueche_soll_temp
+      value: "{{ trigger.payload }}"
+
+- alias: Kueche Temp slider moved
+  trigger:
+    platform: state
+    entity_id: input_number.kueche_soll_temp
+  condition:
+    condition: template
+    value_template: "{{ trigger.payload != states('input_number.kueche_soll_temp') }}"
+  action:
+    service: climate.set_temperature
+    data_template:
+      entity_id: climate.kueche
+      temperature: "{{ float(states('input_number.kueche_soll_temp')) }}"
+
+- alias: Set Bad Temp slider
+  trigger:
+    platform: mqtt
+    topic: cmnd/fhem/fht_Bad/desired-temp
+  condition:
+    condition: template
+    value_template: "{{ trigger.payload != states('input_number.bad_soll_temp') }}"
+  action:
+    service: input_number.set_value
+    data_template:
+      entity_id: input_number.bad_soll_temp
+      value: "{{ trigger.payload }}"
+
+- alias: Bad Temp slider moved
+  trigger:
+    platform: state
+    entity_id: input_number.bad_soll_temp
+  condition:
+    condition: template
+    value_template: "{{ trigger.payload != states('input_number.bad_soll_temp') }}"
+  action:
+    service: climate.set_temperature
+    data_template:
+      entity_id: climate.bad
+      temperature: "{{ float(states('input_number.bad_soll_temp')) }}"

@@ -128,12 +128,11 @@ views:
                 name: Kueche
               - entity: sensor.bad_temp
                 name: Bad
+          - input_number.wohnzimmer_soll_temp
           - input_number.schlafzimmer_soll_temp
-          - climate.wohnzimmer
-          - climate.schlafzimmer
-          - climate.kinderzimmer
-          - climate.kueche
-          - climate.bad
+          - input_number.kinderzimmer_soll_temp
+          - input_number.kueche_soll_temp
+          - input_number.bad_soll_temp
   - title: Garten
     id: garten
     icon: mdi:tree
