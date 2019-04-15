@@ -132,6 +132,7 @@ notify: !include notify.yaml
 timer: !include timers.yaml
 input_select: !include input/select.yaml
 input_boolean: !include input/boolean.yaml
+input_number: !include input/number.yaml
 sabnzbd: !include usenet.yaml
 zone: !include zones.yaml
 shell_command: !include shell.yaml

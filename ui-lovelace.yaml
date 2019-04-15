@@ -118,6 +118,7 @@ views:
             line_width: 1
             hour24: true
             entities:
+              - entity: input.schlafzimmer_soll_temp
               - entity: sensor.wohnzimmer_temp
                 name: Wohnzimmer
               - entity: sensor.schlafzimmer_temp

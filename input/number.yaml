@@ -1,0 +1,4 @@
+schlafzimmer_soll_temp:
+  name: Schlafzimmer Solltemperatur
+  min: 12
+  max: 30
