@@ -4,21 +4,21 @@ schlafzimmer_soll_temp:
   max: 25
 
 wohnzimmer_soll_temp:
-  name: Schlafzimmer
+  name: Wohnzimmer
   min: 16
   max: 25
 
 kinderzimmer_soll_temp:
-  name: Schlafzimmer
+  name: Kinderzimmer
   min: 16
   max: 25
 
 kueche_soll_temp:
-  name: Schlafzimmer
+  name: Küche
   min: 16
   max: 25
 
 bad_soll_temp:
-  name: Schlafzimmer
+  name: Bad
   min: 16
   max: 25
