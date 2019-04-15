@@ -7,3 +7,13 @@
     data_template:
       entity_id: input_number.schlafzimmer_soll_temp
       value: "{{ trigger.payload }}"
+
+- alias: Schlafzimmer Temp slider moved
+  trigger:
+    platform: state
+    entity_id: input_number.schlafzimmer_soll_temp
+  action:
+    service: climate.set_temperature
+    data:
+      entity_id: climate.schlafzimmer
+      temperature: "{{ states('input_number.schlafzimmer_soll_temp') | int }}"
