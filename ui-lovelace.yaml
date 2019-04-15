@@ -41,6 +41,7 @@ views:
           - light.stehlampe
       - type: entities
         title: Heizung
+        show_header_toggle: false
         entities:
           - type: custom:mini-graph-card
             hours_to_show: 24
@@ -96,6 +97,7 @@ views:
             icon: mdi:led-strip
       - type: entities
         title: Heizung
+        show_header_toggle: false
         entities:
           - type: custom:mini-graph-card
             hours_to_show: 24
