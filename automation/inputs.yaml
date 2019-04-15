@@ -22,4 +22,4 @@
     service: climate.set_temperature
     data_template:
       entity_id: climate.schlafzimmer
-      temperature: "{{ trigger.payload }}"
+      temperature: "{{ float(states('input_number.schlafzimmer_soll_temp')) }}"
