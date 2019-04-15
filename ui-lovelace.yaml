@@ -51,7 +51,7 @@ views:
                 name: Ist
               - entity: sensor.wohnzimmer_desired_temp
                 name: Soll
-          - climate.wohnzimmer
+          - input_number.wohnzimmer_soll_temp
       - type: entities
         entities:
         - type: custom:mini-media-player
@@ -99,7 +99,7 @@ views:
                 name: Ist
               - entity: sensor.kinderzimmer_desired_temp
                 name: Soll
-          - climate.kinderzimmer
+          - input_number.kinderzimmer_soll_temp
       - type: entities
         title: Licht
         entities:
