@@ -2,6 +2,9 @@
   trigger:
     platform: mqtt
     topic: cmnd/fhem/fht_Schlafzimmer/desired-temp
+  condition:
+    condition: template
+    value_template: "{% if trigger.payload != states('input_number.schlafzimmer_soll_temp') %}"
   action:
     service: input_number.set_value
     data_template:
