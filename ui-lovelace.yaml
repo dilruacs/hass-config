@@ -118,7 +118,6 @@ views:
             line_width: 1
             hour24: true
             entities:
-              - entity: input.schlafzimmer_soll_temp
               - entity: sensor.wohnzimmer_temp
                 name: Wohnzimmer
               - entity: sensor.schlafzimmer_temp
@@ -129,6 +128,7 @@ views:
                 name: Kueche
               - entity: sensor.bad_temp
                 name: Bad
+          - input.schlafzimmer_soll_temp
           - climate.wohnzimmer
           - climate.schlafzimmer
           - climate.kinderzimmer
