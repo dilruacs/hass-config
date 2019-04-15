@@ -43,9 +43,9 @@ telegram_bot:
     allowed_chat_ids:
       - !secret telegram_chat_id
 
-zoneminder:
-  host: !secret zoneminder_fqdn
-  path_zms: /cgi-bin/nph-zms
+#zoneminder:
+#  host: !secret zoneminder_fqdn
+#  path_zms: /cgi-bin/nph-zms
 
 weather:
   - platform: openweathermap
