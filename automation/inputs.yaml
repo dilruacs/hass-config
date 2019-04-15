@@ -20,6 +20,6 @@
     value_template: "{{ trigger.payload != states('input_number.schlafzimmer_soll_temp') }}"
   action:
     service: climate.set_temperature
-    data:
+    data_template:
       entity_id: climate.schlafzimmer
-      temperature: "{{ float(trigger.payload) }}"
+      temperature: "{{ trigger.payload }}"
