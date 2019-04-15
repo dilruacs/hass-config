@@ -2,23 +2,33 @@ schlafzimmer_soll_temp:
   name: Schlafzimmer
   min: 16
   max: 25
+  unit_of_measurement: "\u00b0C"
+  icon: mdi:thermometer
 
 wohnzimmer_soll_temp:
   name: Wohnzimmer
   min: 16
   max: 25
+  unit_of_measurement: "\u00b0C"
+  icon: mdi:thermometer
 
 kinderzimmer_soll_temp:
   name: Kinderzimmer
   min: 16
   max: 25
+  unit_of_measurement: "\u00b0C"
+  icon: mdi:thermometer
 
 kueche_soll_temp:
   name: Küche
   min: 16
   max: 25
+  unit_of_measurement: "\u00b0C"
+  icon: mdi:thermometer
 
 bad_soll_temp:
   name: Bad
   min: 16
   max: 25
+  unit_of_measurement: "\u00b0C"
+  icon: mdi:thermometer
