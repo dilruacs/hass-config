@@ -1,4 +1,4 @@
 schlafzimmer_soll_temp:
   name: Schlafzimmer
-  min: 12
-  max: 30
+  min: 16
+  max: 25
