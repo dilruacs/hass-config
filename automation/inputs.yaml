@@ -22,4 +22,4 @@
     service: climate.set_temperature
     data:
       entity_id: climate.schlafzimmer
-      temperature: "{{ trigger.payload }}"
+      temperature: "{{ float(trigger.payload) }}"
