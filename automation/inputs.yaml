@@ -1,0 +1,9 @@
+- alias: Set Schlafzimmer Temp slider
+  trigger:
+    platform: mqtt
+    topic: cmnd/fhem/fht_Schlafzimmer/desired-temp
+  action:
+    service: input_number.set_value
+    data_template:
+      entity_id: input_number.schlafzimmer_soll_temp
+      value: "{{ trigger.payload }}"
