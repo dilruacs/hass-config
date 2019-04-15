@@ -128,7 +128,7 @@ views:
                 name: Kueche
               - entity: sensor.bad_temp
                 name: Bad
-          - input.schlafzimmer_soll_temp
+          - input_number.schlafzimmer_soll_temp
           - climate.wohnzimmer
           - climate.schlafzimmer
           - climate.kinderzimmer
