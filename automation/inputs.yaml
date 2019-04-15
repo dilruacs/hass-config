@@ -10,7 +10,7 @@
 
 - alias: Schlafzimmer Temp slider moved
   trigger:
-    platform: numeric_state
+    platform: state
     entity_id: input_number.schlafzimmer_soll_temp
   action:
     service: climate.set_temperature
