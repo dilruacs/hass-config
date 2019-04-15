@@ -92,7 +92,8 @@ views:
         entities:
           - entity: switch.merten_unknown_type_8001_id_8002_switch
             icon: mdi:ceiling-light
-          - light.rgb_hochbett
+          - entity: light.rgb_hochbett
+            icon: mdi:led-strip
       - type: entities
         title: Heizung
         entities:
