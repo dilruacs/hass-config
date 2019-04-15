@@ -130,11 +130,26 @@ views:
                 name: Kueche
               - entity: sensor.bad_temp
                 name: Bad
-          - input_number.wohnzimmer_soll_temp
-          - input_number.schlafzimmer_soll_temp
-          - input_number.kinderzimmer_soll_temp
-          - input_number.kueche_soll_temp
-          - input_number.bad_soll_temp
+          - type: custom:slider-entity-row
+            entity: climate.wohnzimmer
+            toggle: true
+          - type: custom:slider-entity-row
+            entity: climate.schlafzimmer
+            toggle: true
+          - type: custom:slider-entity-row
+            entity: climate.kinderzimmer
+            toggle: true
+          - type: custom:slider-entity-row
+            entity: climate.kueche
+            toggle: true
+          - type: custom:slider-entity-row
+            entity: climate.bad
+            toggle: true
+#          - input_number.wohnzimmer_soll_temp
+#          - input_number.schlafzimmer_soll_temp
+#          - input_number.kinderzimmer_soll_temp
+#          - input_number.kueche_soll_temp
+#          - input_number.bad_soll_temp
   - title: Garten
     id: garten
     icon: mdi:tree
@@ -191,4 +206,6 @@ resources:
   - url: /local/github/kalkih/simple-weather-card.bundle.js?v=0.3.0
     type: module
   - url: /local/github/kalkih/mini-graph-card-bundle.js?v=0.3.2
+    type: module
+  - url: /local/github/thomasloven/slider-entity-row.js
     type: module
