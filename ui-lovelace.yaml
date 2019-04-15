@@ -145,11 +145,11 @@ views:
           # - type: custom:slider-entity-row
           #   entity: climate.bad
           #   toggle: true
-         - input_number.wohnzimmer_soll_temp
-         - input_number.schlafzimmer_soll_temp
-         - input_number.kinderzimmer_soll_temp
-         - input_number.kueche_soll_temp
-         - input_number.bad_soll_temp
+          - input_number.wohnzimmer_soll_temp
+          - input_number.schlafzimmer_soll_temp
+          - input_number.kinderzimmer_soll_temp
+          - input_number.kueche_soll_temp
+          - input_number.bad_soll_temp
   - title: Garten
     id: garten
     icon: mdi:tree
