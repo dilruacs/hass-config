@@ -87,6 +87,11 @@ views:
     icon: mdi:roller-skate
     cards:
       - type: entities
+        title: Licht
+        entities:
+          - switch.merten_unknown_type_8001_id_8002_switch
+          - light.rgb_hochbett
+      - type: entities
         title: Heizung
         entities:
           - type: custom:mini-graph-card
@@ -100,11 +105,6 @@ views:
               - entity: sensor.kinderzimmer_desired_temp
                 name: Soll
           - input_number.kinderzimmer_soll_temp
-      - type: entities
-        title: Licht
-        entities:
-          - switch.merten_unknown_type_8001_id_8002_switch
-          - light.rgb_hochbett
   - title: Heizung
     id: heizung
     icon: mdi:radiator
