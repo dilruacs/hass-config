@@ -40,7 +40,6 @@ views:
           - light.couchlampe
           - light.stehlampe
       - type: entities
-        title: Heizung
         show_header_toggle: false
         entities:
           - type: custom:mini-graph-card
@@ -96,7 +95,6 @@ views:
           - entity: light.rgb_hochbett
             icon: mdi:led-strip
       - type: entities
-        title: Heizung
         show_header_toggle: false
         entities:
           - type: custom:mini-graph-card
@@ -115,7 +113,6 @@ views:
     icon: mdi:radiator
     cards:
       - type: entities
-        title: Heizung
         entities:
           - type: custom:mini-graph-card
             hours_to_show: 24
