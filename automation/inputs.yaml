@@ -16,4 +16,4 @@
     service: climate.set_temperature
     data:
       entity_id: climate.schlafzimmer
-      temperature: "{{ states('input_number.schlafzimmer_soll_temp') | int }}"
+      temperature: "{{ states('input_number.schlafzimmer_soll_temp') | float }}"
