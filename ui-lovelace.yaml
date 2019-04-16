@@ -88,6 +88,10 @@ views:
     icon: mdi:roller-skate
     cards:
       - type: entities
+        title: Rollade
+        entities:
+          - cover.fibaro_system_fgrm223_roller_shutter_controller_3_level
+      - type: entities
         title: Licht
         entities:
           - entity: switch.merten_unknown_type_8001_id_8002_switch
@@ -130,21 +134,6 @@ views:
                 name: Kueche
               - entity: sensor.bad_temp
                 name: Bad
-          # - type: custom:slider-entity-row
-          #   entity: climate.wohnzimmer
-          #   toggle: true
-          # - type: custom:slider-entity-row
-          #   entity: climate.schlafzimmer
-          #   toggle: true
-          # - type: custom:slider-entity-row
-          #   entity: climate.kinderzimmer
-          #   toggle: true
-          # - type: custom:slider-entity-row
-          #   entity: climate.kueche
-          #   toggle: true
-          # - type: custom:slider-entity-row
-          #   entity: climate.bad
-          #   toggle: true
           - input_number.wohnzimmer_soll_temp
           - input_number.schlafzimmer_soll_temp
           - input_number.kinderzimmer_soll_temp
