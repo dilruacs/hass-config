@@ -88,10 +88,6 @@ views:
     icon: mdi:roller-skate
     cards:
       - type: entities
-        title: Rollade
-        entities:
-          - cover.fibaro_system_fgrm223_roller_shutter_controller_3_level
-      - type: entities
         title: Licht
         entities:
           - entity: switch.merten_unknown_type_8001_id_8002_switch
@@ -187,6 +183,10 @@ views:
           - switch.drucker
           - switch.tv
           - switch.htpc
+      - type: entities
+        show_header_toggle: false
+        entities:
+          - cover.fibaro_system_fgrm223_roller_shutter_controller_3_level
 resources:
   - url: /local/github/nervetattoo/simple-thermostat.js?track=true
     type: module
