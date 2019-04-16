@@ -1,0 +1,15 @@
+- alias: Close shutter "Schlafzimmer" after sunset
+  trigger:
+    platform: sun
+    event: sunset
+  action:
+    service: cover.close_cover
+    entity_id: cover.fibaro_system_fgrm223_roller_shutter_controller_3_level
+
+- alias: Open shutter "Schlafzimmer" in the morning
+  trigger:
+    platform: time
+    at: '08:30:00'
+  action:
+    service: cover.open_cover
+    entity_id: cover.fibaro_system_fgrm223_roller_shutter_controller_3_level
