@@ -187,6 +187,7 @@ views:
         show_header_toggle: false
         entities:
           - cover.qubino_goap_zmnhcdx_flush_shutter_level_2
+          - cover.fibaro_system_fgrm223_roller_shutter_controller_3_level
 resources:
   - url: /local/github/nervetattoo/simple-thermostat.js?track=true
     type: module
