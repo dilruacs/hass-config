@@ -17,7 +17,7 @@
     entity_id: input_number.schlafzimmer_soll_temp
   condition:
     condition: template
-    value_template: "{{ trigger.payload != states('input_number.schlafzimmer_soll_temp') }}"
+    value_template: "{{ trigger.payload != states('sensor.schlafzimmer_desired_temp') }}"
   action:
     service: climate.set_temperature
     data_template:
